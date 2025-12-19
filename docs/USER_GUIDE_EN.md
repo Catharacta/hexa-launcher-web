@@ -1,0 +1,460 @@
+# Hexa Launcher User Guide
+
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Installation](#installation)
+3. [Basic Operations](#basic-operations)
+4. [Managing Cells](#managing-cells)
+5. [Using Groups](#using-groups)
+6. [Search Features](#search-features)
+7. [Customization](#customization)
+8. [Keyboard Shortcuts Reference](#keyboard-shortcuts-reference)
+9. [Frequently Asked Questions](#frequently-asked-questions)
+
+---
+
+## Getting Started
+
+Welcome to Hexa Launcher! This guide will walk you through everything from basic usage to advanced features.
+
+### What is Hexa Launcher?
+
+Hexa Launcher is an innovative application launcher that uses a hexagonal grid layout. With keyboard-centric controls, you can quickly launch applications without touching your mouse.
+
+---
+
+## Installation
+
+### Download and Install
+
+1. Download the latest version from the [Official Website](https://catharacta.github.io/hexa-launcher/#download)
+2. Run `hexa-launcher-setup.exe`
+3. Follow the installation wizard
+4. After installation, press `Alt+Space` to launch
+
+### First Launch
+
+When you first launch, you'll see three special cells in the center:
+- **Settings icon**: Opens the settings modal
+- **Close button**: Closes the launcher
+- **Tree button**: Shows the group hierarchy
+
+---
+
+## Basic Operations
+
+### Show/Hide Launcher
+
+- **Global Shortcut**: `Alt+Space`
+  - Press this key combination from any application to summon the launcher
+  - Press again to hide it
+
+### Task Tray / Tray Icon
+- Hexa Launcher runs in the system tray (notification area) while open.
+- Right-click the icon to access the menu:
+    - **Show/Hide**: Toggles launcher visibility.
+    - **Settings**: Opens the settings window.
+    - **Quit**: Exits the application.
+
+### Hex Navigation
+
+Navigate the hexagonal grid using these keys:
+
+```
+    Q   W
+  A   ●   S
+    Z   X
+```
+
+- `Q`: Move to upper-left
+- `W`: Move to upper-right
+- `A`: Move to left
+- `S`: Move to right
+- `Z`: Move to lower-left
+- `X`: Move to lower-right
+
+### Launching Applications
+
+1. Navigate to the desired app using navigation keys
+2. Press `Enter` or click to launch
+
+---
+
+## Managing Cells
+
+### Creating Shortcuts
+
+#### Method 1: Keyboard Shortcuts
+
+- `Ctrl+N`: Create a file shortcut
+  - A dialog will open to select an executable file
+  
+- `Ctrl+Shift+N`: Create a folder shortcut
+  - A dialog will open to select a folder
+
+### Creating Cells
+- **Drag & Drop**: Drop a file or folder onto an empty space on the grid to automatically create a new cell.
+  > [!TIP]
+  > Enabling "General Settings > Show on Mouse Edge" allows you to summon the launcher by simply dragging a file to the screen edge, making registration much smoother.
+- **Right-Click**: Right-click an existing cell and select "Create Special Cell" or "Create Group Here".
+- **Cell Add Mode **: Press `Insert` or select "Add Mode" from the context menu to enable Add Mode (cursor becomes crosshair, grid dims). Click any empty space to add a cell. Press `Esc` to exit.
+- **Shortcut**: Press `Ctrl` + Arrow Key (or configured navigation key) to create and move to a new cell in that direction.
+
+### Editing Cells
+
+#### Rename
+1. Select a cell
+2. Press `F2`
+3. Enter a new name and press `Enter`
+
+#### Change Icon
+1. Right-click on a cell
+2. Select "Change Icon"
+3. Choose a new icon file
+
+#### Advanced Settings
+1. Right-click on a cell
+2. Select "Edit"
+3. Configure in the dialog:
+   - Title
+   - Icon
+   - Target path
+   - Arguments
+   - Working directory
+   - Run as administrator
+   - Theme color (cell-specific color)
+
+### Context Menu (Right-Click)
+
+Menu items vary depending on the cell type.
+
+#### Standard / Empty Cells
+- **Edit Details**: Opens the cell detail editor.
+- **Edit Shortcut (File)**: Opens file selection dialog to register a file.
+- **Edit Shortcut (Folder)**: Opens folder selection dialog to register a folder.
+- **Select UWP App**: Register a UWP application.
+- **Windows Setting**: Create a shortcut to Windows Settings (Display, Sound, etc.).
+- **Create Group Here**: Create a new group by entering a name.
+- **Create Special Cell**: Add special cells (Clock, System Monitor, etc.).
+- **Delete**: Remove the cell.
+
+#### Group Cells
+- **Rename Group**: Rename the group.
+- **Delete Group**: Delete the group cell.
+
+### Deleting Cells
+
+1. Select a cell
+2. Press `Delete`
+3. Confirm in the dialog
+
+### Moving Cells
+
+#### Drag & Drop
+1. Click and drag a cell
+2. Drop it at the target position
+
+#### Swap
+- Drop a cell onto another cell to swap their positions
+
+---
+
+## Cell Types
+
+Hexa Launcher features the following types of cells:
+
+### App Cell
+- Standard shortcut to an application.
+- Launch by clicking or pressing Enter.
+
+### Group Cell
+- A container that holds other cells (like a folder).
+- Distinguished by a double-ring appearance.
+
+### System Cell
+Special function cells (cannot be deleted):
+- **Settings (Center)**: Opens the settings modal.
+- **Tree (Top Left)**: Shows the group hierarchy.
+- **Close (Top Right)**: Exits the application.
+- **Back**: Returns to the parent group (inside groups).
+- **Clock**: Displays the current time.
+- **System Monitor**: Displays system information (CPU/Memory usage).
+- **Add Mode**: Toggles Cell Add Mode when clicked (Same as Insert key).
+
+---
+
+## Using Groups
+
+Groups allow you to organize multiple applications like folders.
+
+### Creating a Group
+
+1. Press `Ctrl+G`
+2. Enter a group name
+3. A group cell is created
+
+### Entering a Group
+
+- Click on a group cell or press `Enter` to enter it
+- Inside a group, you'll see special cells: "Back", "Close", and "Tree"
+
+### Creating Cells in Groups
+
+- use `Insert` to enter Add Mode and click to create
+
+### Returning from a Group
+
+- Click the "Back" cell
+- Or press `Esc`
+
+### Nested Groups
+
+- You can create groups within groups
+- Organize apps in a hierarchical structure
+
+---
+
+## Search Features
+
+### Starting a Search
+
+1. Press `Ctrl+F`
+2. The search bar appears
+
+### Search Modes
+
+#### Fuzzy Search (Default)
+- Fuzzy matching
+- Example: "chr" → "Chrome", "Character Map"
+
+#### Partial Match
+- Searches for apps containing the input string
+- Example: "fire" → "Firefox", "Firewall"
+
+#### Regex (Regular Expression)
+- Search using regex patterns
+- Example: "^C.*e$" → "Chrome", "Code"
+
+### Search Scope
+
+Configurable in settings:
+- **Current Group**: Search only within the current group
+- **Global**: Search across all groups
+
+### Search History
+
+- Past search queries are automatically saved
+- Press `↓` in the search bar to view history
+- Up to 10 queries are saved
+
+---
+
+## Customization
+
+### Opening Settings
+
+1. Click the settings icon in the center
+2. Or select the settings cell and press `Enter`
+
+### General Settings
+
+#### Auto Start
+- Automatically launch Hexa Launcher when Windows starts
+
+#### Language
+- Japanese / English
+
+#### Window Behavior
+- **Always on Top**: Always display above other windows
+- **Hide on Blur**: Automatically hide when clicking other apps
+#### Show on Mouse Edge
+- Automatically show when mouse reaches screen edge
+
+#### Select Center Cell on Boot
+- Automatically select the center settings cell when launcher starts (Default: On)
+
+### Appearance Settings
+
+#### Theme Color
+- Cyan
+- Purple
+- Pink
+- Yellow
+- Slate
+
+#### Style
+- **Default**: Clean and modern design
+- **Cyberpunk**: Neon and glitch effects cyberpunk style
+
+#### Opacity
+- 0% (fully opaque) to 100% (fully transparent)
+
+#### Show Shortcut Icon
+- Toggle the arrow icon overlay for shortcuts (Default: On)
+
+#### Silhouette Mode
+- Render icons as monochrome silhouettes matching the theme color (Default: Off)
+
+#### Visual Effects (VFX)
+- **Enable VFX**: Enables CRT overlay, chromatic aberration, and particle backgrounds (Cyberpunk style only)
+- **Intensity**: Adjust the intensity of the effects
+
+### Grid Settings
+
+#### Hex Size
+- Adjust cell size (40-100px)
+
+#### Animation Speed
+- **Fast**: Quick animations
+- **Normal**: Standard speed
+- **Slow**: Slow animations
+
+#### Gap Size
+- Adjust the gap between hex cells (0-20px)
+
+#### Enable Animations
+- Toggle grid animations on/off
+- Disable this if you experience performance issues on low-end hardware
+
+#### Label Display
+- **Always**: Always visible
+- **Hover**: Visible on hover only
+- **Never**: Hidden
+
+#### Hover Effect
+- Animation effects on mouse hover
+
+### Key Bindings
+
+Customize all keyboard shortcuts:
+
+- Global toggle
+- Hex navigation (6 directions)
+- Actions (create, delete, rename, etc.)
+- Search
+
+### Security Settings
+
+#### Admin Confirmation
+- Show confirmation dialog when launching apps requiring admin rights
+
+#### Launch Confirmation
+- Show confirmation dialog before launching all apps
+
+#### Trusted Paths
+- Apps in specified paths launch without confirmation
+
+### Data Management (Advanced)
+
+#### Export / Import Settings
+- **Export to File**: Save current settings as a JSON file
+- **Import from File**: Restore settings from a saved JSON file (Overwrites current settings)
+- **Copy/Paste**: Transfer settings text via clipboard
+
+### Advanced Settings
+
+#### Debug Mode
+- Enable developer debug logs
+
+#### Show Performance Metrics
+- Display FPS and memory usage statistics
+
+#### Disable Global Animations
+- Forcefully disable all animations for maximum performance
+
+#### Icon Cache
+- **Clear Cache**: Remove cached icons and force re-fetching. Useful if icons are incorrect or outdated
+
+---
+
+## Keyboard Shortcuts Reference
+
+### Global
+| Key | Function |
+|------|----------|
+| `Alt+Space` | Show/Hide launcher |
+
+### Navigation
+| Key | Function |
+|------|----------|
+| `Q` | Move upper-left |
+| `W` | Move upper-right |
+| `A` | Move left |
+| `S` | Move right |
+| `Z` | Move lower-left |
+| `X` | Move lower-right |
+| `Enter` | Launch selected app |
+| `Esc` | Close launcher |
+
+### Cell Operations
+| Key | Function |
+|------|----------|
+| `Insert` | Toggle Cell Add Mode |
+| `Ctrl+N` | Create file shortcut |
+| `Ctrl+Shift+N` | Create folder shortcut |
+| `Ctrl+G` | Create group |
+| `F2` | Rename |
+| `Delete` | Delete |
+
+### Search
+| Key | Function |
+|------|----------|
+| `Ctrl+F` | Open search bar |
+| `Esc` | Close search |
+| `↓` | Show search history |
+
+---
+
+## Frequently Asked Questions
+
+### Q: The global shortcut doesn't work
+
+**A**: Please check the following:
+1. Is it conflicting with other applications?
+2. Try changing the shortcut key in settings
+3. Try running with administrator privileges
+
+### Q: Icons are not displaying correctly
+
+**A**: 
+1. Settings > Advanced > Clear icon cache
+2. Restart the app
+
+### Q: I accidentally deleted a cell
+
+**A**: 
+- Currently, there is no undo feature
+- You may be able to restore from the settings file (`%APPDATA%/hexa-launcher/settings.json`)
+
+### Q: I want to reset settings
+
+**A**:
+1. Each settings tab has a "Reset to Defaults" button
+2. Or delete the settings file: `%APPDATA%/hexa-launcher/settings.json`
+
+### Q: Can I use it with multiple monitors?
+
+**A**: 
+- Yes, the "show on mouse edge" feature works on all monitors
+
+### Q: Is there a portable version?
+
+**A**: 
+- Currently only the installer version is available
+- A portable version is planned for future releases
+
+---
+
+## Support
+
+If you encounter any issues or have suggestions:
+
+1. Visit the [Support & Feedback](https://catharacta.github.io/hexa-launcher/support) page.
+2. Submit your feedback through the provided form.
+
+We appreciate your help in making Hexa Launcher better!
+
+---
+
+**Enjoy Hexa Launcher!** 🎯
