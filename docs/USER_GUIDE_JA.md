@@ -28,7 +28,7 @@ Hexa Launcherは、六角形グリッドを使用した革新的なアプリケ�
 
 ### ダウンロードとインストール
 
-1. [公式サイト](https://catharacta.github.io/hexa-launcher/#download)から最新版をダウンロード
+1. [公式サイト](https://catharacta.github.io/hexa-launcher-web/#download)から最新版をダウンロード
 2. `hexa-launcher-setup.exe`を実行
 3. インストールウィザードに従ってインストール
 4. インストール完了後、`Alt+Space`でランチャーを起動
@@ -459,7 +459,7 @@ Hexa Launcherには以下の種類のセルがあります：
 
 不具合や改善の提案がある場合:
 
-1. [サポート＆フィードバック](https://catharacta.github.io/hexa-launcher/support)ページにアクセスしてください。
+1. [サポート＆フィードバック](https://catharacta.github.io/hexa-launcher-web/support)ページにアクセスしてください。
 2. フォームから内容を送信してください。
 
 皆様のフィードバックをお待ちしております！
