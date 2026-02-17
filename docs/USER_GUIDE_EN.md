@@ -20,7 +20,7 @@ Welcome to Hexa Launcher! This guide will walk you through everything from basic
 
 ### What is Hexa Launcher?
 
-Hexa Launcher is an innovative application launcher that uses a hexagonal grid layout. With keyboard-centric controls, you can quickly launch applications without touching your mouse.
+Hexa Launcher is an innovative application launcher using a hexagonal grid. With intuitive mouse interaction and sleek visuals, it provides a fast way to launch your applications.
 
 ---
 
@@ -57,41 +57,15 @@ When you first launch, you'll see three special cells in the center:
     - **Settings**: Opens the settings window.
     - **Quit**: Exits the application.
 
-### Hex Navigation
+### Interaction and Launching
 
-Navigate the hexagonal grid using these keys:
-
-```
-    Q   W
-  A   ●   S
-    Z   X
-```
-
-- `Q`: Move to upper-left
-- `W`: Move to upper-right
-- `A`: Move to left
-- `S`: Move to right
-- `Z`: Move to lower-left
-- `X`: Move to lower-right
-
-### Launching Applications
-
-1. Navigate to the desired app using navigation keys
-2. Press `Enter` or click to launch
+- **Mouse Hover**: Hover over a cell to scale it up and see its label (title).
+- **Click / Enter**: Click an icon or press `Enter` while focused to launch the application.
+- **Drag**: Click and drag a cell to swap or move its position on the grid.
 
 ---
 
 ## Managing Cells
-
-### Creating Shortcuts
-
-#### Method 1: Keyboard Shortcuts
-
-- `Ctrl+N`: Create a file shortcut
-  - A dialog will open to select an executable file
-  
-- `Ctrl+Shift+N`: Create a folder shortcut
-  - A dialog will open to select a folder
 
 ### Creating Cells
 - **Drag & Drop**: Drop a file or folder onto an empty space on the grid to automatically create a new cell.
@@ -99,7 +73,7 @@ Navigate the hexagonal grid using these keys:
   > Enabling "General Settings > Show on Mouse Edge" allows you to summon the launcher by simply dragging a file to the screen edge, making registration much smoother.
 - **Right-Click**: Right-click an existing cell and select "Create Special Cell" or "Create Group Here".
 - **Cell Add Mode **: Press `Insert` or select "Add Mode" from the context menu to enable Add Mode (cursor becomes crosshair, grid dims). Click any empty space to add a cell. Press `Esc` to exit.
-- **Shortcut**: Press `Ctrl` + Arrow Key (or configured navigation key) to create and move to a new cell in that direction.
+- **Shortcuts**: Use `Ctrl+N` (File) or `Ctrl+Shift+N` (Folder) to register the selected spot as a shortcut.
 
 ### Editing Cells
 
@@ -129,7 +103,7 @@ Navigate the hexagonal grid using these keys:
 
 Menu items vary depending on the cell type.
 
-#### Standard / Empty Cells
+- **Delete**: Remove the cell.
 - **Edit Details**: Opens the cell detail editor.
 - **Edit Shortcut (File)**: Opens file selection dialog to register a file.
 - **Edit Shortcut (Folder)**: Opens folder selection dialog to register a folder.
@@ -137,7 +111,6 @@ Menu items vary depending on the cell type.
 - **Windows Setting**: Create a shortcut to Windows Settings (Display, Sound, etc.).
 - **Create Group Here**: Create a new group by entering a name.
 - **Create Special Cell**: Add special cells (Clock, System Monitor, etc.).
-- **Delete**: Remove the cell.
 
 #### Group Cells
 - **Rename Group**: Rename the group.
@@ -154,9 +127,6 @@ Menu items vary depending on the cell type.
 #### Drag & Drop
 1. Click and drag a cell
 2. Drop it at the target position
-
-#### Swap
-- Drop a cell onto another cell to swap their positions
 
 ---
 
@@ -254,8 +224,7 @@ Configurable in settings:
 
 ### Opening Settings
 
-1. Click the settings icon in the center
-2. Or select the settings cell and press `Enter`
+1. Click the center Settings icon.
 
 ### General Settings
 
@@ -266,7 +235,7 @@ Configurable in settings:
 - Japanese / English
 
 #### Window Behavior
-- **Always on Top**: Always display above other windows
+- **Always on Top**: Kept above other windows.
 - **Hide on Blur**: Automatically hide when clicking other apps
 #### Show on Mouse Edge
 - Automatically show when mouse reaches screen edge
@@ -307,6 +276,7 @@ Configurable in settings:
 
 #### Animation Speed
 - **Fast**: Quick animations
+- **Custom CSS** (Pro): Inject your own styles.
 - **Normal**: Standard speed
 - **Slow**: Slow animations
 
@@ -374,18 +344,7 @@ Customize all keyboard shortcuts:
 | Key | Function |
 |------|----------|
 | `Alt+Space` | Show/Hide launcher |
-
-### Navigation
-| Key | Function |
-|------|----------|
-| `Q` | Move upper-left |
-| `W` | Move upper-right |
-| `A` | Move left |
-| `S` | Move right |
-| `Z` | Move lower-left |
-| `X` | Move lower-right |
-| `Enter` | Launch selected app |
-| `Esc` | Close launcher |
+| `Esc` | Close Launcher |
 
 ### Cell Operations
 | Key | Function |
