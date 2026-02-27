@@ -1,33 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Hexa Launcher</title>
-    <!-- Redirect for actual users to see the styled SPA -->
-    <meta http-equiv="refresh" content="0; url=/hexa-launcher-web/?/privacy" />
-    <script>
-      window.location.replace('/hexa-launcher-web/?/privacy');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Hexa Launcher</title>
+  <meta name="description"
+    content="Privacy Policy for Hexa Launcher, next-generation hexagon application launcher for Windows.">
+  <!-- Load the pre-compiled Tailwind CSS -->
+  <link rel="stylesheet" href="/hexa-launcher-web/output.css">
+  <link rel="icon" type="image/svg+xml" href="/hexa-launcher-web/hexagon.svg" />
+  <style>
+    /* Fallback base styles just in case output.css doesn't load immediately */
+    body {
+      background-color: #030712;
+      color: #f3f4f6;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    a {
+      color: #00f2ea;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .text-cyan {
+      color: #00f2ea;
+    }
+
+    .bg-doc {
+      background-color: rgba(3, 7, 18, 0.9);
+    }
+  </style>
 </head>
-<body>
-    <!-- Fallback content for MS Store validator and search engines -->
-    <h1>Privacy Policy for Hexa Launcher</h1>
-    <p>Last Updated: February 2026</p>
-    
-    <h2>1. Data Collection</h2>
-    <p>Hexa Launcher is a local application. It does not collect, store, transmit, or share any personal information. All your settings, shortcuts, and configurations are stored securely and locally on your Windows device.</p>
-    
-    <h2>2. Network Communication</h2>
-    <p>The application does not phone home, use telemetry, or require an internet connection to function for its core features. Network connectivity is only required for features that inherently depend on it, such as downloading updates or communicating with the Microsoft Store for license verification.</p>
-    
-    <h2>3. Microsoft Store Integration</h2>
-    <p>When purchased or installed through the Microsoft Store, Microsoft collects standard analytical data (such as installation counts and crash reports) in accordance with the Microsoft Privacy Statement. Hexa Launcher uses the Windows SDK to verify licenses, and this process is managed by your operating system.</p>
-    
-    <h2>4. Third-Party Services</h2>
-    <p>We do not integrate third-party analytics, tracking pixels, or advertising frameworks into Hexa Launcher or this website.</p>
-    
-    <h2>5. Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy or how your data is handled, please reach out to us via our Support Page or the issue tracker on our official GitHub repository.</p>
+
+<body
+  class="bg-gray-950 text-gray-100 font-sans selection:bg-[#00f2ea] selection:text-black antialiased min-h-screen relative">
+  <!-- Background Grid Effect -->
+  <div class="fixed inset-0 z-0 opacity-20 pointer-events-none"
+    style="background-image: radial-gradient(circle at center, #1f2937 1px, transparent 1px); background-size: 24px 24px;">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-950/90 backdrop-blur border-b border-gray-800">
+    <div class="container mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="/hexa-launcher-web/" class="flex items-center gap-2 text-white font-bold text-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f2ea"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+          <path
+            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+          </path>
+        </svg>
+        Hexa Launcher
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="/hexa-launcher-web/"
+          class="px-4 py-2 rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-800/50">Home</a>
+        <a href="/hexa-launcher-web/docs"
+          class="px-4 py-2 rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-800/50 flex items-center gap-1">Docs</a>
+        <a href="/hexa-launcher-web/support"
+          class="px-4 py-2 rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-800/50 flex items-center gap-1">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-16 relative z-10 min-h-screen">
+    <div class="sticky top-16 z-20 bg-gray-950/90 backdrop-blur border-b border-gray-800 py-4 px-6">
+      <div class="container mx-auto">
+        <a href="/hexa-launcher-web/"
+          class="inline-flex items-center gap-2 text-gray-400 hover:text-[#00f2ea] transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+          Back to Home
+        </a>
+      </div>
+    </div>
+
+    <div class="container mx-auto px-6 py-16 max-w-3xl">
+      <div class="text-center mb-12">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f2ea"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16 mx-auto mb-4">
+          <path
+            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+        </svg>
+        <h1 class="text-4xl font-bold mb-4">Privacy Policy</h1>
+        <p class="text-xl text-gray-400">Last Updated: February 2026</p>
+      </div>
+
+      <div class="prose prose-invert prose-lg max-w-none">
+        <p>At Catharacta Studio, we take your privacy seriously. This Privacy Policy explains how Hexa Launcher
+          collects, uses, and protects your information.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-[#00f2ea]">1. Data Collection</h2>
+        <p><strong>Hexa Launcher is a local application.</strong> It does not collect, store, transmit, or share any
+          personal information. All your settings, shortcuts, and configurations are stored securely and locally on your
+          Windows device.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-[#00f2ea]">2. Network Communication</h2>
+        <p>The application does not phone home, use telemetry, or require an internet connection to function for its
+          core features. Network connectivity is only required for features that inherently depend on it, such as
+          downloading updates or communicating with the Microsoft Store for license verification.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-[#00f2ea]">3. Microsoft Store Integration</h2>
+        <p>When purchased or installed through the Microsoft Store, Microsoft collects standard analytical data (such as
+          installation counts and crash reports) in accordance with the <a
+            href="https://privacy.microsoft.com/en-us/privacystatement" class="text-cyan hover:underline"
+            target="_blank" rel="noopener noreferrer">Microsoft Privacy Statement</a>. Hexa Launcher uses the Windows
+          SDK to verify licenses, and this process is managed by your operating system.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-[#00f2ea]">4. Third-Party Services</h2>
+        <p>We do not integrate third-party analytics, tracking pixels, or advertising frameworks into Hexa Launcher or
+          this website.</p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4 text-[#00f2ea]">5. Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or how your data is handled, please reach out
+          to us via our <a href="/hexa-launcher-web/support" class="text-cyan hover:underline">Support Page</a> or the
+          issue tracker on our official GitHub repository.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 py-12 border-t border-gray-800 text-center text-gray-500">
+    <div class="container mx-auto px-6">
+      <p>&copy; 2026 Catharacta. All Rights Reserved.</p>
+      <div class="flex justify-center gap-6 mt-4">
+        <a href="/hexa-launcher-web/docs" class="hover:text-[#00f2ea] transition-colors">Documentation</a>
+        <a href="/hexa-launcher-web/support" class="hover:text-[#00f2ea] transition-colors">Support</a>
+        <a href="/hexa-launcher-web/privacy" class="hover:text-[#00f2ea] transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
