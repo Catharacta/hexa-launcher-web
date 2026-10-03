@@ -37,12 +37,12 @@ Hexa Launcher is a next-generation desktop application launcher for Windows desi
 
 ### First Launch Screen
 
-When launching Hexa Launcher for the first time, you will see three default system cells arranged in the center:
+When launching Hexa Launcher for the first time, you will see two essential system cells arranged in the center:
 - **Settings (Center)**: Opens the settings modal.
-- **Close (Top Right)**: Closes (hides) the launcher.
 - **Tree (Top Left)**: Displays the group hierarchy modal.
 
 These cells form the essential navigation backbone of the launcher.
+To close (hide) the launcher, simply click on the empty background area, or press the `Esc` key or `Alt+Space`.
 
 ---
 
@@ -58,20 +58,27 @@ These cells form the essential navigation backbone of the launcher.
   - (If a modal is open, `Esc` closes the modal; if inside a group, `Esc` navigates back to the parent group).
 - **Background Click**:
   - Clicking on the empty background area automatically hides the launcher.
+  - *Note: When Focus Pin is active, the launcher remains pinned to the screen even when clicking background or switching focus to other apps.*
 
-### Taskbar Notification Area (System Tray)
+### Taskbar System Tray
 
-Hexa Launcher runs quietly in the system tray while active.
-Right-click the tray icon to access:
-- **Show/Hide**: Toggles the launcher window.
-- **Settings**: Opens the settings modal directly.
-- **Quit**: Exits and terminates the application completely.
+Hexa Launcher runs quietly in the system tray (notification area). Right-click the tray icon to access:
+- **Show/Hide**: Toggles launcher visibility.
+- **Settings**: Opens the settings dialog.
+- **Quit**: Exits the application completely.
 
 ### Cell Interactions
 
-- **Mouse Hover**: Hovering over a hex cell scales it up and reveals its title label.
-- **Click / Enter**: Clicking a cell or pressing `Enter` when a cell is selected executes and launches the target application.
-- **Drag & Swap**: Click and drag a cell onto another cell to swap their positions on the grid.
+- **Mouse Hover**: Hovering over any cell magnifies it slightly and displays its title label.
+- **Click**:
+  - Clicking a shortcut cell immediately launches the application.
+  - Clicking a group cell enters that group.
+  - Clicking an unconfigured (empty) cell opens the PC Item Search modal, allowing you to instantly register apps and files.
+- **Drag & Drop (Move, Swap, Store)**:
+  - **Move to Empty Space**: Drag a cell and drop it onto an empty grid coordinate to move it.
+  - **Swap Positions**: Drop a cell onto another existing cell to swap their grid positions.
+  - **Store in Group**: Drag and drop a cell directly onto a group cell to move it into that group.
+  - **Multi-Cell Drag**: Select multiple cells with `Ctrl` or `Shift` click to drag and move them all together.
 
 ---
 
@@ -79,319 +86,334 @@ Right-click the tray icon to access:
 
 ### Adding New Cells
 
-To maintain the mathematical consistency of the hexagonal grid, new cells are placed using **Cell Add Mode**:
+To maintain the geometric symmetry of the hexagonal grid, cells are added via "Cell Add Mode":
 
-1. Press the **`Insert` key** (the cursor transforms into a crosshair and the grid enters placement mode).
-2. Click any **empty position** adjacent to your cells to spawn a new cell.
-3. Press **`Esc`** or **`Insert`** again to exit Add Mode.
+1. Press the **`Insert` key** (the cursor changes to a crosshair, placing the grid into Add Mode).
+2. Click any **empty position on the grid** to place a new blank cell.
+3. Press **`Esc`** or press **`Insert`** again to exit Add Mode.
 
-> [!TIP]
-> You can rebind the Cell Add Mode key in the "Keybinding" tab under Settings.
-
-### Registering Shortcuts to Existing Cells
-
-Once you have created an empty cell, you can assign an application, file, or folder using any of the following methods:
-
-#### Method 1: Drag & Drop (D&D)
-1. Drag an executable (`.exe`), shortcut (`.lnk`), URL shortcut (`.url`), or folder from Windows Explorer.
-2. **Drop it directly onto the target cell** in Hexa Launcher.
-3. The application name and icon will automatically be extracted and assigned.
+> [!NOTE]
+> Each layer (root or group) supports a maximum of **30 cells**. If the limit is reached, a toast notification will notify you.
 
 > [!TIP]
-> Enable "Settings > General > Show on Mouse Edge". You can drag a file against the screen edge to summon the launcher on the fly, then drop the file seamlessly onto your cell.
+> You can customize the shortcut key for Cell Add Mode in the "Keybinding" tab within Settings.
 
-#### Method 2: Keyboard Shortcuts
-1. Click a cell to **select it**.
-2. Press **`Ctrl+N`** (for files) or **`Ctrl+Shift+N`** (for folders).
-3. Browse and choose your target from the native file dialog.
+### Registering Shortcuts to Cells
+
+You can assign applications or files to blank cells using any of the following methods:
+
+#### Method 1: Click Blank Cell to Search PC (Fastest & Recommended)
+1. **Click directly on a blank cell**.
+2. The PC Item Search modal pops up automatically. Type the app or file name.
+3. Results are aggregated instantly from the Start Menu, Desktop, UWP Apps, and the Windows Search indexer.
+4. Click your desired item (or navigate with arrow keys and press `Enter`) to register it with its native icon.
+
+#### Method 2: Drag and Drop (D&D)
+1. Drag an executable (`.exe`), shortcut (`.lnk`), URL shortcut (`.url`), or folder from Windows File Explorer.
+2. **Drop it directly onto the target cell** on Hexa Launcher.
+3. The app name and icon are extracted automatically.
+
+> [!TIP]
+> Enable "Settings > General > Show on Mouse Edge". You can drag a file from Explorer, bump your mouse against the screen edge to summon the launcher, and drop it without switching windows.
 
 #### Method 3: Context Menu (Right-Click)
-1. **Right-click** on any cell.
-2. Select **Edit Shortcut (File)** or **Edit Shortcut (Folder)**.
-3. Choose **Select UWP App** to pick modern Windows Store apps (Calculator, Notepad, etc.).
-4. *(Pro Edition)* Choose **Windows Setting** to generate direct shortcuts to Windows Settings pages (Display, Bluetooth, Sound, etc.).
+1. Right-click the cell you want to configure.
+2. Select "**Search & Register...**" to open the PC search modal.
+3. Select "**Edit Shortcut (File)**" or "**Edit Shortcut (Folder)**" to choose target files or directories via the file picker.
+4. Select "**Select UWP App**" to register Windows Store apps (Calculator, Notepad, etc.).
+5. [Pro] Select "**Windows Setting**" to register direct shortcuts to Windows Settings (Display, Bluetooth, etc.).
 
-### Editing Cell Properties (Edit Details)
+#### Method 4: Keyboard Shortcuts
+1. Click a cell to select it.
+2. Press **`Ctrl+N`** (file picker) or **`Ctrl+Shift+N`** (folder picker) to select the target.
 
-1. Right-click any cell and select **Edit Details**.
-2. The dialog allows you to configure:
+### Editing Cell Properties (Details)
+
+1. Right-click a cell and select "**Edit Details**".
+2. Configure the following fields:
    - **Name**: Display title of the cell.
-   - **Target Path**: Destination path (read-only reference).
-   - **Icon**: Click "Change Icon" to select a custom PNG/ICO/SVG file, or "Reset Icon" to restore defaults.
-   - **Arguments**: Command-line arguments passed on launch (e.g. `--fullscreen`).
-   - **Working Directory**: Working directory for the process (with folder browser button).
-   - *(Pro Edition)* **Custom Command**: Shell command to execute (e.g. `git pull`).
-   - *(Pro Edition)* **Command Arguments**: Arguments for the custom command.
+   - **Target Path**: Destination path. Click "**Search & Select...**" to search and pick from your PC.
+   - **Icon**:
+     - "**Select from Library**": Choose from hundreds of themed Lucide vector icons organized by category.
+     - "**Browse Image File**": Choose a custom image file (PNG, ICO, SVG, etc.).
+     - "**Reset Icon**": Reset to the default extracted icon.
+   - **Arguments**: Command-line arguments (e.g. `--fullscreen`).
+   - **Working Directory**: Working directory (configurable via folder browser).
+   - **Run as Administrator (UAC)**: Check this option to launch the app elevated with administrator privileges.
+   - **[Pro] Custom Command**: Shell command to execute (e.g. `git pull`).
+   - **[Pro] Command Arguments**: Arguments for the shell command.
 
 ### Renaming Cells
 
-1. Click a cell to select it.
-2. Press **`F2`**.
+1. Select the cell.
+2. Press the **`F2` key**.
 3. Type the new name and press `Enter`.
 
 ### Deleting Cells
 
-1. Click a cell to select it.
-2. Press **`Delete`** (or right-click and choose **Delete**).
+1. Select the cell.
+2. Press the **`Delete` key** (or right-click and select "Delete").
 3. The cell is removed immediately.
 
 > [!NOTE]
-> Mandatory system cells such as the central "Settings" cell cannot be deleted.
+> Mandatory system cells (**Settings**, **Tree**, and **Back** inside groups) are protected and cannot be deleted (their right-click menus are disabled).
+> Focus Pin cells and Close cells are optional and can be deleted freely.
 
 ---
 
 ## Cell Types
 
-Hexa Launcher features four primary categories of cells:
+Hexa Launcher features several distinct cell types:
 
-### 1. App / Shortcut Cells
-- Standard shortcuts linking to executables, folders, URLs, and UWP apps.
-- Triggered by clicking or pressing `Enter`.
+### 1. App / Shortcut Cell
+- Standard shortcut to an application, folder, website, or UWP app.
+- Click to launch.
 
-### 2. Group Cells
-- Container cells that hold nested grids of apps, functioning like folders.
-- Rendered with a distinctive double-ring hexagonal border.
-- Standard edition supports up to 5 groups; Pro edition supports unlimited groups.
+### 2. Group Cell
+- A container cell storing a cluster of inner cells, like a desktop folder.
+- Distinguished by a double-ring hexagonal border.
+- Standard Edition supports up to 5 groups; Pro Edition supports unlimited groups (up to 5 levels of nesting).
 
-### 3. System Cells
-- Core cells providing built-in navigation and control:
-  - **Settings (Center)**: Opens the settings modal.
-  - **Close (Top Right)**: Closes (hides) the launcher.
-  - **Tree (Top Left)**: Opens the group hierarchy tree view.
-  - **Back**: Appears inside groups to return to the parent group.
+### 3. System Cell
+- Special navigation cells:
+  - **Settings (Center)**: Opens the settings dialog (Mandatory, non-deletable).
+  - **Tree (Top Left)**: Opens the full hierarchy tree modal (Mandatory, non-deletable).
+  - **Back**: Appears inside groups to navigate up to the parent group (Mandatory inside groups).
+  - **Close (Optional)**: Closes the launcher. Can be created via right-click "Create Special Cell" and deleted whenever desired.
 
-### 4. Widget Cells
-Dynamic cells displaying live system and time information, created via right-click > **Create Widget...**:
-- **Clock**: Displays the current time with sleek styling.
-- **System**: Real-time CPU and memory usage statistics.
-- *(Pro Edition)* **Detailed Graph**: Historical line graph for system resources.
-- *(Pro Edition)* **CPU Graph / Memory Graph / GPU Graph**: Dedicated resource utilization monitors.
+### 4. Focus Pin Cell / Widget (Pin)
+- Keeps Hexa Launcher permanently pinned on your screen.
+- Click to toggle **Focus Pin ON / OFF** (accompanied by a theme-colored toast confirmation).
+- **When Pin is ON**: Clicking other applications or the launcher's background will no longer hide the window. You can still close it anytime with `Esc` or `Alt+Space`.
+- **Not mandatory**: You can freely create or delete Pin cells via the right-click menu ("Create Special Cell > Pin" or "Create Widget... > Focus Pin Widget").
+
+### 5. Widget Cell
+Live information cells created via the right-click "**Create Widget...**" menu:
+- **Clock**: Displays the current time in a stylized format.
+- **System**: Real-time CPU and memory usage meters.
+- **Focus Pin Widget**: Interactive toggle widget for focus pinning.
+- **[Pro] Detailed Graph**: Detailed resource history graph.
+- **[Pro] CPU Graph / Memory Graph / GPU Graph**: Dedicated single-metric graphs.
+
+### 6. Create Special Cell Submenu
+Right-click any unconfigured cell and select "**Create Special Cell**" to transform it into:
+- **Tree**: Group hierarchy tree cell
+- **Close**: Window close cell
+- **Back**: Parent navigation cell
+- **Pin (Keep Open)**: Focus pin cell
 
 ---
 
 ## Using Groups
 
-Groups enable you to organize applications into categories such as Games, Work, Media, or Development.
+Organize apps into categories such as Gaming, Work, Development, or Media.
 
 ### Creating a Group
 
-1. Select a cell you want to turn into a group (or right-click a cell).
-2. Press **`Ctrl+G`** (or choose **Create Group Here** from the context menu).
-3. Enter a group name in the prompt and submit.
-4. The cell is converted into a group cell containing default navigation cells.
+1. Select a cell you wish to transform into a group (or right-click an empty cell).
+2. Press **`Ctrl+G`** (or select "**Create Group Here**" in the context menu).
+3. Enter the group name and press `Enter`.
+4. The cell converts into a double-ring group cell.
 
-### Navigating into a Group
+### Entering a Group
 
-- Click on a group cell or press `Enter` while focused to enter it.
-- A **Back** cell will be present inside to navigate upward.
+- Click on the group cell to enter.
+- A "**Back**" cell is automatically placed inside to allow easy return navigation.
+
+### Breadcrumb HUD Navigation
+
+- Inside any group, a theme-accented **Breadcrumb HUD** appears at the top of the screen.
+- The path (e.g. `Home > Development > Tools`) is displayed with interactive breadcrumb pills. Click any ancestor name or the Home icon to jump directly to that tier.
 
 ### Adding Cells inside Groups
 
-- Press **`Insert`** to enter Add Mode, then click an unoccupied position on the grid.
+- Press `Insert` while inside a group to activate Add Mode and click an empty coordinate (up to 30 cells per group).
 
-### Returning to the Parent Group
+### Returning to Parent Group
 
-- Click the **Back** cell.
+- Click the "**Back**" cell.
+- Click the back arrow or parent breadcrumb in the top **HUD**.
 - Or press the **`Esc` key**.
 
-### Hierarchy Tree Modal
+### Group Hierarchy Tree Modal
 
-- Click the **Tree** cell in the upper left to inspect the entire group hierarchy and jump to any group with one click.
+- Click the "**Tree**" cell to view all nested groups in an interactive tree view, allowing instant jumps to any level.
 
 ---
 
 ## Search Features
 
-Quickly locate and launch any application or group across your library.
+Hexa Launcher provides two distinct search tools: **PC Item Search** and **Launcher Filter Search**.
 
-### Performing a Search
+### 1. Start-Menu-Style PC Item Search (`Search & Register...`)
 
-1. Press **`Ctrl+F`** to open the floating search bar.
-2. Type an application or group name.
-3. Matching cells light up and are highlighted across the grid.
-4. Press **`Esc`** to dismiss the search bar.
+Find and register PC apps and files instantly.
 
-### Switching Search Mode & Scope
+- **How to Use**:
+  1. Click any blank cell, or right-click and choose "**Search & Register...**".
+  2. Type the name of the app, file, or folder.
+  3. Filter by tabs (*All*, *Apps*, *Files*, *Folders*).
+  4. Click or press `Enter` on the result to register it with its native icon.
 
-Click the indicator buttons in the lower-right corner of the search bar to toggle search algorithms and search scopes on the fly (also configurable in "Settings > Appearance"):
+### 2. In-Grid Filter Search Bar (`Ctrl+F`)
 
-- **Search Mode (Mode)**: Click to cycle between:
-  - **Fuzzy (Default)**: Fuzzy matching via Fuse.js. Fault-tolerant to typos and abbreviations.
-  - **Partial**: Case-insensitive substring match. Finds cells containing exact text.
-  - **Regex**: Regular expression match. Supports advanced regex patterns like `^code.*`.
-- **Search Scope (Scope)**: Click to toggle:
-  - **Global**: Searches across all groups and categories.
-  - **Current**: Constrains search strictly to cells within the currently opened group.
+Quickly filter and highlight registered cells on the current launcher grid.
 
-### Search History
+- **How to Use**:
+  1. Press **`Ctrl+F`** to open the search bar.
+  2. Type your query; matching cells are highlighted while non-matching cells dim.
+  3. Press **`Esc`** or `Ctrl+F` again to dismiss.
 
-- Your latest 10 search queries are saved automatically.
-- Press **`↓` / `↑`** in the search bar to browse previous searches, then press `Enter` to search.
+- **Search Modes and Scopes**:
+  - Switch via the pills at the bottom right of the search bar:
+    - **Fuzzy (Default)**: Tolerates typos and partial terms.
+    - **Partial**: Strict substring match.
+    - **Regex**: Advanced regular expression matching.
+    - **Global**: Searches across all groups.
+    - **Current**: Filters only within the active group.
 
-### Search Bar Placement & Drag Movement
+- **Search History**:
+  - Retains up to 10 recent searches. Navigate with **`↓` / `↑`** and press `Enter`.
 
-- **Drag & Drop Repositioning**:
-  - Grab the handle icon (`⋮⋮`) on the far-left of the search bar to freely drag and place it anywhere across your monitor.
-  - The custom position is remembered automatically for subsequent searches.
-  - Click the "**RESET POS**" button on the search bar or choose a preset in settings anytime to return to standard center alignment.
-- **Placement Presets**:
-  - Go to "Settings > Appearance" and locate **Search Bar Position** to choose between **Center (Recommended)**, **Top**, **Bottom**, or **Custom**.
-- **Auto-Close on Minimize / Hide**:
-  - Whenever the launcher is hidden or minimized (via shortcut, tray icon, background click, or Esc key), any open search bar is automatically and cleanly closed. It will always start fresh next time the launcher appears.
-- **Keyboard Shortcut & Instant Toggle**:
-  - Press **`Ctrl+F`** (or your configured search shortcut) to immediately open and focus the search bar, even with IME enabled.
-  - Pressing `Ctrl+F` again or pressing `Esc` dismisses the search bar.
+- **Draggable Search Bar**:
+  - Grab the handle icon (`⋮⋮`) on the left to drag the search bar anywhere.
+  - Reset position anytime via the "**RESET POS**" button.
 
 ---
 
 ## Settings and Customization
 
-Click the central **Settings** cell or choose "Settings" from the system tray menu to access the comprehensive preferences dialog.
+Click the central "**Settings**" cell or right-click the system tray icon to open Settings.
 
 ### 1. General Settings
-- **Start on Boot**: Automatically launch Hexa Launcher when Windows starts.
-- **Select Center on Boot**: Focuses the center settings cell automatically when summoned.
-- **Language**: Switch between English and Japanese (`日本語`).
+- **Start on Boot**: Automatically launch Hexa Launcher with Windows.
+- **Select Center on Boot**: Focus the central Settings cell on start.
+- **Language**: Switch between English and 日本語.
 - **Window Behavior**:
-  - **Always on Top**: Keeps the launcher above other applications.
-  - **Hide on Blur**: Automatically hides the launcher when you click outside.
-  - **Show on Mouse Edge**: Automatically summons the launcher when moving your cursor against the screen border.
+  - **Always on Top**: Keeps the launcher floating above other windows.
+  - **Hide on Blur**: Automatically hides when clicking outside (disabled when Focus Pin is active).
+  - **Show on Mouse Edge**: Summons the launcher when nudging the cursor against the screen border.
 
 ### 2. Appearance Settings
 - **Visual Style**:
-  - **Default**: Clean and contemporary modern styling.
-  - **Cyberpunk**: Glowing neon visuals with glitch accents.
-- **Opacity**: Adjust overall launcher transparency slider (0% to 100%).
-- **Theme Color**: Select your accent color for Default style (Cyan, Purple, Pink, Yellow, Slate, etc.).
-- **Show Shortcut Icon**: Toggles the small arrow badge on shortcut cells.
-- *(Pro Edition)* **Silhouette Icons**: Renders icons as monochrome silhouettes tinted with your theme color. Includes fine-tuning sliders for Duotone Contrast and Brightness.
-- **Visual Effects (VFX)**: For Cyberpunk style, toggles CRT monitor scanlines, chromatic aberration, and particle backgrounds, with an intensity slider.
-- **Search Settings**: Configure default Search Mode (Fuzzy / Partial / Regex), Search Scope (Global / Current Group), and Search Bar Position (Center / Top / Bottom).
+  - **Default**: Modern clean flat theme.
+  - **Cyberpunk**: Neon glowing lines, glitch accents, and CRT scanlines.
+- **Opacity**: Adjust overall launcher transparency (0% - 100%).
+- **Theme Color**: Choose your primary accent color (Cyan, Blue, Purple, Green, Orange, Red, Pink, Yellow, etc.).
+- **Shortcut Icon Display**: Toggle the small shortcut arrow badge.
+- **[Pro] Silhouette Icons**: Renders icons as uniform duotone silhouettes matching your accent color.
+- **Visual Effects (VFX)**: Toggle scanlines, chromatic aberration, and particle backgrounds in Cyberpunk mode.
+- **Search Settings**: Set default search mode, scope, and initial bar position.
 
-### 3. Cell & Grid Settings (Cell Manager)
-- **Hex Size**: Adjust cell scale from 40px to 100px.
-- **Gap Size**: Adjust spacing between cells from 0px to 20px.
-- **Show Labels**: Configure label visibility (`Always`, `Hover`, or `Never`).
-- **Animation Speed**: Controls transition animations (`Fast`, `Normal`, or `Slow`).
-- **Hover Effect**: Enables smooth scaling and glow on cursor hover.
-- **Enable Animations**: Toggle global grid physics animations on or off.
+### 3. Cell & Grid Manager
+- **Hex Size**: Customize hexagon size (40px - 100px).
+- **Gap Size**: Adjust spacing between hexagons (0px - 20px).
+- **Show Labels**: Configure title visibility (*Always*, *Hover*, or *Never*).
+- **Animation Speed**: Adjust transition smoothness (*Fast*, *Normal*, *Slow*).
+- **Hover Effect & Animation Toggles**: Customize visual reactivity.
 
 ### 4. Keybinding Settings
-Fully customize your workflow shortcuts:
-- Global launcher summon toggle (Default: `Alt+Space`)
-- Open search bar (Default: `Ctrl+F`)
-- Cell Add Mode (Default: `Insert`)
-- Action keys: Delete cell (`Delete`), Create shortcut file (`Ctrl+N`), Create shortcut folder (`Ctrl+Shift+N`), Create group (`Ctrl+G`), Rename cell (`F2`).
+Customize all major shortcuts:
+- Global Summon (`Alt+Space`)
+- Grid Filter Search (`Ctrl+F`)
+- Cell Add Mode (`Insert`)
+- Edit Actions (Delete: `Delete`, File: `Ctrl+N`, Folder: `Ctrl+Shift+N`, Group: `Ctrl+G`, Rename: `F2`)
 
-### 5. Persistence Settings (Data Management)
-- **Auto Backup**: Automatically creates timestamped backups on change (retains up to 10 historical snapshots).
-- **Export to File / Copy to Clipboard**: Export all configurations and layouts as portable JSON.
-- **Import from File / Paste from Clipboard**: Restore settings from JSON (overwriting current state).
+### 5. Persistence & Data Management
+- **Auto Backup**: Automatically maintains the latest 10 backups upon each settings save.
+- **Portable Paths**: File paths are automatically converted into portable environment placeholders (e.g. `%LOCALAPPDATA%`, `%USERPROFILE%`), keeping configs portable across different machines.
+- **Export / Import**: Backup or restore configurations via `.json` files or clipboard.
 
 ### 6. Security Settings
-- **Admin Confirmation**: Prompts a safety warning before launching applications requiring UAC administrator elevation.
-- **Launch Confirmation**: Prompts a confirmation dialog before launching any app.
+- **Require Admin Confirmation**: Displays a prompt before executing apps requiring elevation.
 - **Trusted Paths**: Whitelist safe directories to bypass confirmation prompts.
 
 ### 7. Advanced Settings
-- **Debug Mode**: Enables verbose developer logging.
-- **Show Performance Metrics**: Overlays real-time FPS and resource diagnostic counters.
-- **Disable Global Animations**: Completely disables UI animations for maximum efficiency on low-spec hardware.
-- *(Pro Edition)* **Custom CSS**: Write raw CSS declarations directly to restyle any part of the UI.
-- **Diagnostics**: Displays group tree hierarchies, total cell counts, active license state, and raw JSON data.
-- **Clear Icon Cache**: Resets cached application icons if icons appear outdated or corrupted.
+- **Debug Mode & Performance Metrics**: Overlay FPS and technical logs.
+- **Disable Animations**: Disables all transitions for minimum resource usage.
+- **[Pro] Custom CSS**: Inject arbitrary custom CSS to fully reskin the UI.
+- **Diagnostics**: View cell counts, group trees, and raw JSON configurations.
+- **Clear Icon Cache**: Resets the cache if icons fail to update.
 
-### 8. Help Settings
-- View current app version number.
-- Quick usage guidelines.
-- Link to official web documentation.
-- Comprehensive third-party open-source software license notices.
+### 8. Help
+- Version info, quick guide, online documentation link, and open source licenses.
 
-### 9. Pro Settings
-- Current license activation status (Standard vs. Pro).
-- Upgrade link to Microsoft Store for In-App Purchase.
-- Overview of all unlocked Pro capabilities.
+### 9. Pro Edition
+- Verify license status and purchase the Pro upgrade via the Microsoft Store.
 
 ---
 
 ## Keyboard Shortcuts Reference
 
-### Global
-| Shortcut | Action |
+### Global Shortcuts
+| Key | Function |
 |:---|:---|
-| `Alt+Space` | Show / Hide Hexa Launcher |
+| `Alt+Space` | Summon / Dismiss Hexa Launcher |
 
-### Grid and Cell Operations (Configurable)
-| Key (Default) | Function | Context / Requirement |
+### Grid & Cell Shortcuts (Customizable in Settings)
+| Key (Default) | Function | Condition |
 |:---|:---|:---|
-| `Insert` | Toggle Cell Add Mode | Available anywhere on grid |
-| `Esc` | Contextual Escape | Closes modals → Exits add mode → Clears selection → Returns to parent group → Hides launcher |
-| `Delete` | Delete Cell | When a cell is selected (immediate without confirmation) |
-| `Ctrl+N` | Register File Shortcut | Exactly 1 cell selected |
-| `Ctrl+Shift+N` | Register Folder Shortcut | Exactly 1 cell selected |
-| `Ctrl+G` | Convert Cell to Group | When a cell is selected |
-| `F2` | Rename Cell / Group | Exactly 1 cell selected |
-| `Enter` | Launch Cell / Enter Group | When a cell is selected |
+| `Insert` | Toggle Cell Add Mode | Everywhere |
+| `Esc` | Close modal / Exit Add Mode / Clear selection / Back to parent / Dismiss launcher | Context-sensitive priority |
+| `Delete` | Delete cell | Cell selected (deletes non-mandatory cells immediately) |
+| `Ctrl+N` | Open file picker to register shortcut | 1 cell selected |
+| `Ctrl+Shift+N` | Open folder picker to register shortcut | 1 cell selected |
+| `Ctrl+G` | Create group (converts selected cell into group) | Cell selected |
+| `F2` | Rename cell or group | 1 cell selected |
 
-### Search
-| Shortcut | Action |
+### Search Shortcuts
+| Key | Function |
 |:---|:---|
-| `Ctrl+F` | Open Search Bar |
-| `Esc` | Close Search Bar |
-| `↓` / `↑` | Navigate search query history |
-| `Enter` | Search with selected history query |
+| `Ctrl+F` | Open / Close grid search bar |
+| `Esc` | Close search bar |
+| `↓` / `↑` | Navigate search history |
+| `Enter` | Execute selected history search |
 
 ---
 
 ## Frequently Asked Questions (FAQ)
 
-### Q: The global shortcut does not work
+### Q: The global shortcut doesn't trigger
 **A**:
-1. Check if another tool (e.g. PowerToys Run) is conflicting with `Alt+Space`.
-2. Rebind the summon shortcut in "Settings > Keybinding" to another key (e.g. `Ctrl+Space`).
-3. If an elevated admin window is focused, Hexa Launcher must also be running with administrator privileges to catch the shortcut.
+1. Check if another program (e.g. PowerToys Run) uses `Alt+Space`.
+2. Rebind the summon shortcut in "Settings > Keybinding" (e.g. to `Ctrl+Space`).
+3. If an elevated admin window is active, Hexa Launcher must also run as Administrator to capture hotkeys.
 
-### Q: Where are configuration and backup files stored?
+### Q: Where are configuration files stored?
 **A**:
-Settings and automatic backups are preserved under your user profile:
-- **Settings File**: `%APPDATA%\CatharactaStudio.HexaLauncher\settings.json`
-- **Backups Directory**: `%APPDATA%\CatharactaStudio.HexaLauncher\backups\`
+Settings and backups are saved at:
+- **Configuration**: `%APPDATA%\CatharactaStudio.HexaLauncher\settings.json`
+- **Backups**: `%APPDATA%\CatharactaStudio.HexaLauncher\backups\`
 
-### Q: Icons are outdated or not displaying properly
+### Q: How do I use the Focus Pin feature?
 **A**:
-1. Open the Settings modal.
-2. Go to the **Advanced** tab.
-3. Click **Clear Cache** under the Maintenance section.
-4. The icon cache index will be purged and re-extracted automatically.
+- Right-click an empty cell and select "Create Special Cell > Pin" or "Create Widget... > Focus Pin Widget".
+- Click it to toggle Focus Pin ON. The launcher will stay visible on screen even when you interact with other apps.
+- Since it is not a mandatory cell, you can delete it with `Delete` anytime when no longer needed.
 
-### Q: I accidentally deleted a cell
+### Q: Can I use it across multiple monitors?
 **A**:
-- An instant undo command is currently not implemented.
-- If Auto Backup is enabled, open "Settings > Persistence", click "Import from File", and select the most recent backup JSON from `%APPDATA%\CatharactaStudio.HexaLauncher\backups\`.
+- Yes. The launcher automatically displays on whichever monitor your mouse cursor is currently positioned when you press the shortcut.
 
-### Q: Can I use Hexa Launcher with multiple monitors?
+### Q: What are the benefits of the Pro Edition?
 **A**:
-- Yes! Hexa Launcher dynamically detects which monitor your mouse cursor is located on when you press the global shortcut, positioning itself onto that screen.
-
-### Q: What is the difference between Standard and Pro editions?
-**A**:
-Standard Edition is completely free and full-featured for everyday launching. Upgrading to Pro unlocks advanced power-user capabilities:
-- Unlimited Groups (Standard is capped at 5 groups).
-- Specialized Resource Graphs (Detailed Graph, CPU, Memory, GPU monitors).
-- Custom Shell Command Runner in Cell Edit Dialog.
-- Direct Windows Settings shortcuts.
-- Silhouette Duotone Contrast and Brightness controls.
-- Custom CSS Injector for total theme tailoring.
+Standard Edition includes all fundamental launcher features for free. Pro Edition unlocks:
+- Unlimited group folders (Standard supports up to 5 groups)
+- Detailed resource graph widgets (Detailed Graph, CPU/Memory/GPU Graphs)
+- Custom shell command runner in cell details
+- Direct Windows Settings shortcuts
+- Duotone silhouette icon mode
+- Custom CSS injector engine
 
 ---
 
 ## Support
 
-For bug reports, questions, or feature requests:
+For bug reports or feature requests, feel free to visit:
 
 - **Official Website**: [Hexa Launcher Web](https://catharacta.github.io/hexa-launcher-web/)
-- **Support & Feedback**: [Submit Feedback](https://catharacta.github.io/hexa-launcher-web/support)
+- **Support & Feedback**: [Feedback Form](https://catharacta.github.io/hexa-launcher-web/support)
 
 ---
 
-**Enjoy your new desktop command center with Hexa Launcher!** 🎯
+**Enjoy your next-generation desktop experience with Hexa Launcher!** 🎯
