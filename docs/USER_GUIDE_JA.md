@@ -291,7 +291,6 @@ PCにインストールされているアプリやファイルを探して、セ
 
 ### 1. 一般設定 (General)
 - **自動起動 (Start on Boot)**: Windows起動時にHexa Launcherを自動起動します。
-- **起動時に設定セルを選択 (Select Center on Boot)**: 起動時に中央の設定セルを自動フォーカスします。
 - **言語 (Language)**: 日本語 / English を切り替えます。
 - **ウィンドウの挙動**:
   - **常に最前面 (Always on Top)**: 他のウィンドウの上に常に表示します。

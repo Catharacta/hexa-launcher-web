@@ -287,7 +287,6 @@ Click the central "**Settings**" cell or right-click the system tray icon to ope
 
 ### 1. General Settings
 - **Start on Boot**: Automatically launch Hexa Launcher with Windows.
-- **Select Center on Boot**: Focus the central Settings cell on start.
 - **Language**: Switch between English and 日本語.
 - **Window Behavior**:
   - **Always on Top**: Keeps the launcher floating above other windows.
