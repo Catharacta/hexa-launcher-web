@@ -127,9 +127,9 @@ You can assign applications or files to blank cells using any of the following m
 1. Click a cell to select it.
 2. Press **`Ctrl+N`** (file picker) or **`Ctrl+Shift+N`** (folder picker) to select the target.
 
-### Editing Cell Properties (Details)
+### Editing Cell Properties (Edit Cell)
 
-1. Right-click a cell and select "**Edit Details**".
+1. Right-click a cell and select "**Edit Cell**".
 2. Configure the following fields:
    - **Name**: Display title of the cell.
    - **Target Path**: Destination path. Click "**Search & Select...**" to search and pick from your PC.
