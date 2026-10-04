@@ -188,12 +188,19 @@ Hexa Launcher features several distinct cell types:
 - **Not mandatory**: You can freely create or delete Pin cells via the right-click menu ("Create Special Cell > Pin" or "Create Widget... > Focus Pin Widget").
 
 ### 5. Widget Cell
-Live information cells created via the right-click "**Create Widget...**" menu:
-- **Clock**: Displays the current time in a stylized format.
-- **System**: Real-time CPU and memory usage meters.
-- **Focus Pin Widget**: Interactive toggle widget for focus pinning.
-- **[Pro] Detailed Graph**: Detailed resource history graph.
-- **[Pro] CPU Graph / Memory Graph / GPU Graph**: Dedicated single-metric graphs.
+Live information cells created via the right-click "**Create Widget...**" menu.
+Designed around the "**One Cell, One Metric**" principle, each widget cleanly presents real-time data in an optimized 3-row layout (**Type / Number / Gauge Bar**):
+
+- **Utility Widgets**:
+  - **Clock Widget**: Displays the current time in a stylized, readable digital clock.
+  - **Focus Pin Widget**: Interactive toggle button to keep the launcher permanently on-screen.
+- **[Pro] Performance Gauge Widgets**:
+  Dedicated hardware monitors modeled after the Windows Task Manager Performance tab:
+  - **CPU Gauge (`CPU`)**: Overall CPU utilization (%) with a neon load bar.
+  - **Memory Gauge (`MEM`)**: Memory utilization (%) with a real-time capacity bar.
+  - **Disk Gauge (`DISK`)**: Disk active time (%) with an I/O activity bar.
+  - **Network Gauge (`NET`)**: Live upload/download throughput (Mbps) with a bandwidth bar.
+  - **GPU Gauge (`GPU`)**: Dedicated GPU 3D utilization (%) with a graphics load bar.
 
 ### 6. Create Special Cell Submenu
 Right-click any unconfigured cell and select "**Create Special Cell**" to transform it into:
